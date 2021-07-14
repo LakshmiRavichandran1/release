@@ -216,6 +216,14 @@ tests:
     env:
       TEST_SUITE: openshift/conformance/serial
     workflow: openshift-e2e-openstack-ipi
+- as: installer-remote-libvirt-s390x
+  interval: 12h
+  steps:
+    cluster_profile: libvirt-s390x
+    env:
+      ARCH: s390x
+      BRANCH: "4.8"
+    workflow: ipi-libvirt
 zz_generated_metadata:
   branch: master
   org: openshift
